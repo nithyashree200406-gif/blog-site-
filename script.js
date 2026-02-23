@@ -1,6 +1,6 @@
-console.log("Website Loaded");
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
 
-document.querySelector("form").addEventListener("submit", function(e) {
-  e.preventDefault();
-  alert("Form submitted!");
+menuToggle.addEventListener("click", function () {
+    navLinks.classList.toggle("active");
 });
