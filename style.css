@@ -1,30 +1,93 @@
-nav {
-  position: sticky;
-  top: 0;
-  background: black;
-  padding: 10px;
+
+/* NAVBAR - Modern Glass Design */
+
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 8%;
+
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    color: white;
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
+/* Logo */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
-nav a {
-  color: white;
-  text-decoration: none;
+/* Nav Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
 }
 
-footer {
-  background: black;
-  color: white;
-  text-align: center;
-  padding: 15px;
-  margin-top: 30px;
+/* Link Styling */
+.nav-links li a {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: 0.3s ease;
 }
 
-img {
-  width: 300px;
-  border-radius: 10px;
+/* Animated underline effect */
+.nav-links li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background: #00adb5;
+    transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+/* Hamburger icon (hidden on desktop) */
+.menu-toggle {
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+    color: white;
+}
+
+
+/* MOBILE RESPONSIVE */
+
+
+@media (max-width: 768px) {
+
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: rgba(0, 0, 0, 0.95);
+        flex-direction: column;
+        width: 220px;
+        text-align: center;
+        display: none;
+        padding: 20px 0;
+        border-radius: 8px 0 0 8px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
 }
